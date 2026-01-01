@@ -12,11 +12,12 @@ html{
     background-attachment: fixed;
 }
 #live-view-canvas {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
     display: block;
 }
 input[type="range"] {
+    margin: 10px;
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 60%;
