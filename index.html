@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <script src="/scripts/imageProcess.js" defer></script>
+        <title>Sea True Color</title>
+    </head>
+    <body>
+        <header class="main-header">
+            <h1>Sea True Color</h1>
+        </header>
+        <main>
+            <section class="content-section">
+                <h2>About Sea True Color</h2>
+                <p>Sea True Color is a simple open source tool to reveal the true color of underwater images.</p>
+                <p>ocean water scatters and absorbs light, this causes images taken underwater to appear much bluer and less vibrant than they would if taken on the surface. This tool corrects for this effect</p>
+                <p>All processing is done locally in your browser to ensure your images remain private.</p>
+            </section>
+            <section class="gallery-section">
+                <h2>Gallery</h2>
+                <div class="gallery">
+                    <img src="/artwork/clownfish before.png" width="400px" alt="raw image">
+                    <img src="/artwork/clownfish after.png" width="400px"   alt="Color corrected image">
+                    <br>
+                    <img src="/artwork/anemone before.png" width="400px" alt="raw image">
+                    <img src="/artwork/anemone after.png" width="400px"   alt="Color corrected image">
+                </div>
+            </section>
+            <section class="upload-section">
+                <h2>Select Your Image</h2>
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <input type="file" name="image" accept="image/*">
+                </form>
+            </section>
+            <section class="edit-section">
+                <h2>Live edit</h2>
+                <canvas id="live-view-canvas" width="1280px" height="720px"></canvas>
+                <br>
+                <section class="inputs-section">
+                    <select id = "units-select">
+                        <option value="meters">Meters (m)</option>
+                        <option value="feet">Feet (ft)</option>
+                    </select>
+                    <br>
+                    <label for="depth-slider">Depth: </label>
+                    <input type="range" id="depth-slider" min="0" max="30" value="0">
+                    <label id ="depth-value">0 meters</label>
+                    <br>
+                    <button id="save-button">Save Image</button>
+                </section>
+            </section>
+    </body>
+</html>
