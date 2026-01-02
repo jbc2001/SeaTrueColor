@@ -80,14 +80,10 @@ unitsSelect.addEventListener('change', function() {
     if(selectedUnit === 'meters') {
         depthSlider.max = 60;
         depthSlider.value = Math.min(depthSlider.value, 60);
-        distanceSlider.max = 60;
-        distanceSlider.value = Math.min(distanceSlider.value, 60);
     }
     else if(selectedUnit === 'feet') {
         depthSlider.max = 196;
         depthSlider.value = Math.min(depthSlider.value, 196);
-        distanceSlider.max = 196;
-        distanceSlider.value = Math.min(distanceSlider.value, 196);
     }
     updateDepthValue();
     updateDistanceValue();
