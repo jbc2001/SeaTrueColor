@@ -86,7 +86,6 @@ unitsSelect.addEventListener('change', function() {
         depthSlider.value = Math.min(depthSlider.value, 196);
     }
     updateDepthValue();
-    updateDistanceValue();
 });
 depthSlider.addEventListener('input', function() {
     updateDepthValue();
