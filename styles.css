@@ -4,6 +4,7 @@ html, body {
     padding: 0;
     font-family: Arial, sans-serif;
     color: rgb(230, 252, 242);
+    text-align: center;
 }
 
 html{
@@ -12,9 +13,18 @@ html{
     background-attachment: fixed;
 }
 #live-view-canvas {
+    border-radius: 20px;
     max-width: 60%;
     height: auto;
-    display: block;
+    text-align: center;
+
+}
+div{
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #4caf9680;
+    text-align: center;
 }
 input[type="range"] {
     margin: 10px;
@@ -53,7 +63,7 @@ button {
 }
 .inputs-section {
     padding: 1rem;
-    background-color: #9effbb65;
+    background-color: #4caf9680;
     border-radius: 15px;
 }
 .main-header {
