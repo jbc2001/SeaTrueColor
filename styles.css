@@ -186,9 +186,21 @@ body>*:not(#bubbles):not(#lightbox) {
     border-color: rgba(140, 220, 245, 0.6);
 }
 
+.depth-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.depth-row input[type="range"] {
+    flex: 1;
+    width: auto;
+    margin: 10px 0;
+}
+
 #depth-value {
-    display: inline-block;
-    width: 6rem;
+    white-space: nowrap;
+    min-width: 5rem;
     text-align: left;
 }
 
@@ -233,6 +245,9 @@ button {
 @media (max-width: 500px) {
     .edit-section {
         padding: 1.2rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        overflow: hidden;
     }
 
     .select-row {
@@ -242,6 +257,34 @@ button {
 
     input[type="file"] {
         width: 100%;
+    }
+
+    #live-view-canvas {
+        max-width: calc(100% + 2.4rem);
+        width: calc(100% + 2.4rem);
+        margin-left: -1.2rem;
+        margin-right: -1.2rem;
+        border-radius: 0;
+    }
+
+    input[type="range"] {
+        height: 8px;
+        margin: 16px 10px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        width: 28px;
+        height: 28px;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #5dd5f0;
+        box-shadow: 0 0 6px rgba(80, 210, 240, 0.6);
+        cursor: pointer;
+        border: none;
     }
 }
 

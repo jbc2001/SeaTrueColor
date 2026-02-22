@@ -5,6 +5,7 @@ let depthValue = document.getElementById('depth-value');
 let fileInput = document.querySelector('input[type="file"]');
 let imageCanvas = document.getElementById('live-view-canvas');
 let saveButton = document.getElementById('save-button');
+let liveEditControls = document.getElementById('live-edit-controls');
 let selectedUnit = unitsSelect.value;
 let rawImageData = null;
 
@@ -21,6 +22,7 @@ fileInput.addEventListener('change', function (event) {
                 let ctx = imageCanvas.getContext('2d');
                 ctx.drawImage(img, 0, 0, img.width, img.height);
                 rawImageData = ctx.getImageData(0, 0, img.width, img.height);
+                liveEditControls.hidden = false;
             }
             img.src = e.target.result;
         }

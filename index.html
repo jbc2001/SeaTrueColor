@@ -43,6 +43,7 @@
                     <input type="file" name="image" accept="image/*">
                 </form>
             </div>
+            <div id="live-edit-controls" hidden>
             <h2>Live edit</h2>
             <canvas id="live-view-canvas" width="1280" height="720"></canvas>
             <br>
@@ -52,11 +53,14 @@
                     <option value="feet">Feet (ft)</option>
                 </select>
                 <br>
-                <label for="depth-slider">Depth: </label>
-                <input type="range" id="depth-slider" min="0" max="30" value="0">
-                <label id="depth-value">0 meters</label>
+                <div class="depth-row">
+                    <label for="depth-slider">Depth: </label>
+                    <input type="range" id="depth-slider" min="0" max="30" value="0">
+                    <label id="depth-value">0 meters</label>
+                </div>
                 <br>
                 <button id="save-button">Save Image</button>
+            </div>
             </div>
         </section>
         <section class="gallery-section">
