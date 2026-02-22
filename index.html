@@ -1,56 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" type="image/x-icon" href="artwork/seatruecolorIcon.ico">
-        <script src="scripts/imageProcess.js" defer></script>
-        <title>Sea True Color</title>
-    </head>
-    <body>
-        <header class="main-header">
-            <h1>Sea True Color</h1>
-        </header>
-        <main>
-            <section class="content-section">
-                <h2>About Sea True Color</h2>
-                <p>Sea True Color is a simple open source tool to reveal the true color of underwater images.</p>
-                <p>ocean water scatters and absorbs light, this causes images taken underwater to appear much bluer and less vibrant than they would if taken on the surface. This tool corrects for this effect</p>
-                <p>All processing is done locally in your browser to ensure your images remain private.</p>
-            </section>
-            <section class="gallery-section">
-                <h2>Gallery</h2>
-                <div class="gallery">
-                    <img src="artwork/clownfish before.png" width="40%" alt="raw image">
-                    <img src="artwork/clownfish after.png" width="40%"   alt="Color corrected image">
-                    <br>
-                    <img src="artwork/anemone before.png" width="40%" alt="raw image">
-                    <img src="artwork/anemone after.png" width="40%"  alt="Color corrected image">
-                </div>
-            </section>
-            <section class="upload-section">
-                <h2>Select Your Image</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="artwork/seatruecolorIcon.ico">
+    <script src="scripts/imageProcess.js" defer></script>
+    <script src="scripts/bubbles.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            document.querySelectorAll('.gallery img').forEach(function (img) {
+                img.addEventListener('click', function () {
+                    lbImg.src = img.src;
+                    lbImg.alt = img.alt;
+                    lightbox.classList.add('open');
+                });
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') lightbox.classList.remove('open');
+            });
+        });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>SeaTrueColor</title>
+</head>
+<body>
+    <canvas id="bubbles"></canvas>
+    <div id="lightbox" onclick="this.classList.remove('open')">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+    <header class="main-header">
+        <h1>SeaTrueColor</h1>
+    </header>
+    <main>
+        <section class="edit-section">
+            <div class="select-row">
+                <h2>Select Your Image: </h2>
                 <form action="#" method="post" enctype="multipart/form-data">
                     <input type="file" name="image" accept="image/*">
                 </form>
-            </section>
-            <section class="edit-section">
-                <h2>Live edit</h2>
-                <canvas id="live-view-canvas" width="1280px" height="720px"></canvas>
+            </div>
+            <h2>Live edit</h2>
+            <canvas id="live-view-canvas" width="1280" height="720"></canvas>
+            <br>
+            <div class="inputs-section">
+                <select id="units-select">
+                    <option value="meters">Meters (m)</option>
+                    <option value="feet">Feet (ft)</option>
+                </select>
                 <br>
-                <div class="inputs-section">
-                    <select id = "units-select">
-                        <option value="meters">Meters (m)</option>
-                        <option value="feet">Feet (ft)</option>
-                    </select>
-                    <br>
-                    <label for="depth-slider">Depth: </label>
-                    <input type="range" id="depth-slider" min="0" max="30" value="0">
-                    <label id ="depth-value">0 meters</label>
-                    <br>
-                    <button id="save-button">Save Image</button>
-                </div>
-            </section>
-    </body>
+                <label for="depth-slider">Depth: </label>
+                <input type="range" id="depth-slider" min="0" max="30" value="0">
+                <label id="depth-value">0 meters</label>
+                <br>
+                <button id="save-button">Save Image</button>
+            </div>
+        </section>
+        <section class="gallery-section">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="artwork/clownfish before.png" width="40%" alt="raw image">
+                <img src="artwork/clownfish after.png" width="40%" alt="Color corrected image">
+                <br>
+                <img src="artwork/anemone before.png" width="40%" alt="raw image">
+                <img src="artwork/anemone after.png" width="40%" alt="Color corrected image">
+            </div>
+        </section>
+        <section class="content-section">
+            <h2>About Sea True Color</h2>
+            <p>Sea True Color is a simple open source tool to reveal the true color of underwater images.</p>
+            <p>ocean water scatters and absorbs light, this causes images taken underwater to appear much bluer and less
+                vibrant than they would if taken on the surface. This tool corrects for this effect</p>
+            <p>All processing is done locally in your browser to ensure your images remain private.</p>
+            <p>Code released freely under MIT license. <a href="https://github.com/jbc2001/SeaTrueColor" target="_blank"
+                    rel="noopener">View source on GitHub</a></p>
+        </section>
+    </main>
+</body>
 </html>
