@@ -11,6 +11,15 @@ body {
 html {
     background: linear-gradient(180deg, #071e33 0%, #0b3d58 40%, #051c2e 100%);
     background-attachment: fixed;
+    min-height: 100%;
+    background-color: #051c2e;
+}
+
+/* iOS Safari does not support background-attachment: fixed */
+@supports (-webkit-touch-callout: none) {
+    html {
+        background-attachment: scroll;
+    }
 }
 
 #bubbles {
@@ -217,6 +226,23 @@ button {
     font-size: 0.9rem;
     cursor: pointer;
     transition: background 0.15s ease, border-color 0.15s ease;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+@media (max-width: 500px) {
+    .edit-section {
+        padding: 1.2rem;
+    }
+
+    .select-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    input[type="file"] {
+        width: 100%;
+    }
 }
 
 input[type="file"]:hover,
