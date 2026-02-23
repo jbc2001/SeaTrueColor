@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -28,7 +27,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <title>SeaTrueColor</title>
 </head>
-
 <body>
     <canvas id="bubbles"></canvas>
     <div id="lightbox" onclick="this.classList.remove('open')">
@@ -46,23 +44,23 @@
                 </form>
             </div>
             <div id="live-edit-controls" hidden>
-                <h2>Live edit</h2>
-                <canvas id="live-view-canvas" width="1280" height="720"></canvas>
+            <h2>Live edit</h2>
+            <canvas id="live-view-canvas" width="1280" height="720"></canvas>
+            <br>
+            <div class="inputs-section">
+                <select id="units-select">
+                    <option value="meters">Meters (m)</option>
+                    <option value="feet">Feet (ft)</option>
+                </select>
                 <br>
-                <div class="inputs-section">
-                    <select id="units-select">
-                        <option value="meters">Meters (m)</option>
-                        <option value="feet">Feet (ft)</option>
-                    </select>
-                    <br>
-                    <div class="depth-row">
-                        <label for="depth-slider">Depth: </label>
-                        <input type="range" id="depth-slider" min="0" max="30" value="0">
-                        <label id="depth-value">0 meters</label>
-                    </div>
-                    <br>
-                    <button id="save-button">Save Image</button>
+                <div class="depth-row">
+                    <label for="depth-slider">Depth: </label>
+                    <input type="range" id="depth-slider" min="0" max="30" value="0">
+                    <label id="depth-value">0 meters</label>
                 </div>
+                <br>
+                <button id="save-button">Save Image</button>
+            </div>
             </div>
         </section>
         <section class="gallery-section">
@@ -77,14 +75,13 @@
         </section>
         <section class="content-section">
             <h2>About Sea True Color</h2>
-            <p>Sea True Color is an open-source utility for recovering accurate color in underwater imagery.</p>
-            <p>Ocean water both scatters and absorbs light wavelengths, causing photos taken underwater to skew blue and
-                lose vibrancy. This application compensates for those optical effects.</p>
-            <p>All processing is performed locally in your browser to protect your privacy.</p>
-            <p>Source code released under the MIT License. <a href="https://github.com/jbc2001/SeaTrueColor"
-                    target="_blank" rel="noopener">View source on GitHub</a></p>
+            <p>Sea True Color is a simple open source tool to reveal the true color of underwater images.</p>
+            <p>Ocean water scatters and absorbs light, this causes images taken underwater to appear much bluer and less
+                vibrant than they would if taken on the surface. This tool corrects for this effect</p>
+            <p>All processing is done locally in your browser to ensure your images remain private.</p>
+            <p>Code released freely under MIT license. <a href="https://github.com/jbc2001/SeaTrueColor" target="_blank"
+                    rel="noopener">View source on GitHub</a></p>
         </section>
     </main>
 </body>
-
 </html>
