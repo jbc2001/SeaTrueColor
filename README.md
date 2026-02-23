@@ -1,5 +1,5 @@
 # SeaTrueColor
-- Try it out at https://jbc2001.github.io/SeaTrueColor/
+- Try it out at https://seatruecolor.com
 
 ## Overview
 This is a simple web app to correct the colors of underwater images and reveal their true colors.
