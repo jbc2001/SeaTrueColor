@@ -4,10 +4,23 @@
     const ctx = canvas.getContext('2d');
     let bubbles = [];
     const COUNT = 55;   // number of bubbles
+    let count = COUNT;
+
+
+    window.addEventListener('resize', WindowResize);
 
     function resize() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        count = (canvas.width / 1920) * COUNT;
+    }
+
+    function WindowResize() {
+        resize();
+        bubbles = [];
+        for (let i = 0; i < count; i++) {
+            bubbles.push(createBubble());
+        }
     }
     //creates bubbles with random properties
     function createBubble(atBottom = false) {
