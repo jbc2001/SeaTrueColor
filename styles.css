@@ -15,6 +15,15 @@ html {
     background-color: #051c2e;
 }
 
+/* Ensure the page background covers iOS safe area and dynamic toolbar changes */
+body {
+    background: linear-gradient(180deg,#0b3d58 0%, #020c14 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-color: #051c2e;
+    -webkit-overflow-scrolling: touch;
+}
+
 /* iOS Safari does not support background-attachment: fixed */
 @supports (-webkit-touch-callout: none) {
     html {
@@ -295,12 +304,15 @@ button:hover {
     border-color: rgba(80, 200, 240, 0.4);
 }
 
-html, body {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-}
+/* Hide scrollbars only on non-touch (desktop) devices to avoid iOS rendering bugs */
+@media (hover: hover) and (pointer: fine) {
+    html, body {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
 
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
+    }
 }
