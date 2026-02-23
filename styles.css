@@ -9,7 +9,7 @@ body {
 }
 
 html {
-    background: linear-gradient(180deg, #071e33 0%, #0b3d58 40%, #051c2e 100%);
+    background: linear-gradient(180deg,#0b3d58 0%, #020c14 100%);
     background-attachment: fixed;
     min-height: 100%;
     background-color: #051c2e;
