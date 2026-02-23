@@ -294,3 +294,13 @@ button:hover {
     background: rgba(15, 110, 160, 0.6);
     border-color: rgba(80, 200, 240, 0.4);
 }
+
+html, body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
