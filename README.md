@@ -1,9 +1,11 @@
 # SeaTrueColor
 - Try it out at https://seatruecolor.com
+<img width="1026" height="441" alt="preview" src="https://github.com/user-attachments/assets/8e7d5672-fbcb-41ad-85fc-ba6f5d0a886f" />
 
 ## Overview
 This is a simple web app to correct the colors of underwater images and reveal their true colors.
 It provides a live view of the image so you can fine tune the slider.
+
 
 ## Limitations
 - This app is only designed to correct the subject in focus. For wider or deeper shots this tool cannot accurately correct the entire image
