@@ -10,7 +10,6 @@ It provides a live view of the image so you can fine tune the slider.
 - The depth slider also needs to include the distance to the subject. For close up images this may be negligable but zoomed in shots will need to account for this
 
 ## Potential Improvements
-- UI overhaul
 - Lower Resolution for live view
 - Correction for wider shots (unlikely for this simple tool)
 
